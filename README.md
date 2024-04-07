@@ -1,7 +1,9 @@
 # React + Vite
 
-Top 5 npm package that use in the website
-1)swipe slider
+Top 5 npm package that use in the website <br />
+1) swipe slider
+2) react icons <br/>
+3) React-Hook form <br />
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
