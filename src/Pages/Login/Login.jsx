@@ -9,7 +9,7 @@ const Login = () => {
     // show password
     const [show, setShow] = useState(false);
     // use context
-    const { signInUser, googleLogin } = useContext(AuthContext);
+    const { signInUser, googleLogin, githubLogin } = useContext(AuthContext);
     // hook-form
     const { register,handleSubmit,formState: { errors } } = useForm()
     
@@ -24,6 +24,7 @@ const Login = () => {
             console.log(error.message);
         })
       };
+      //google login
       const handleGoogle = () => {
         googleLogin()
         .then((result) => {
@@ -33,7 +34,18 @@ const Login = () => {
             console.log(error.message);
         })
       };
+      //github login
+      const handleGithub = () => {
+        githubLogin()
+        .then((result) => {
+            console.log(result.user);
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+      }
 
+      
 
 
     return (
@@ -73,7 +85,7 @@ const Login = () => {
                 <FaGoogle size={20} />
                 <span>Google Login</span>
             </div>
-            <div className="flex items-center gap-3 btn text-xl my-2">
+            <div onClick={handleGithub} className="flex items-center gap-3 btn text-xl my-2">
                 <FaGithub size={20} />
                 <span>Github Login</span>
             </div>
