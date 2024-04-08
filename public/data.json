@@ -1,0 +1,74 @@
+[
+    {
+      "id": "001",
+      "image": "https://i.ibb.co/tQsXMWh/view-from-balcony-apartment.jpg",
+      "estate_title": "Modern Single-Family Home with Mountain Views",
+      "segment_name": "Single-family home",
+      "description": "Experience luxury living in this modern single-family home featuring breathtaking mountain views. Ideal for families seeking comfort and tranquility.",
+      "price": 850000,
+      "status": "sale",
+      "area": "2800 sq ft",
+      "location": "Scenic Heights, Mountain Valley",
+      "facilities": ["Gourmet Kitchen", "Spa-like Bathroom", "Backyard Garden", "Garage"]
+    },
+    {
+      "id": "002",
+      "image": "https://i.ibb.co/T0JkV20/istockphoto-1448385933-1024x1024.jpg",
+      "estate_title": "Charming Townhouse in Historic District",
+      "segment_name": "Townhouse",
+      "description": "Discover charm and character in this historic townhouse located in a vibrant neighborhood. Perfect for those who appreciate urban living with a touch of nostalgia.",
+      "price": 550000,
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Historic District, Downtown",
+      "facilities": ["Brick Fireplace", "Private Patio", "Community Park Access", "Parking Space"]
+    },
+    {
+      "id": "003",
+      "image": "https://i.ibb.co/XWg8SsB/rural-house-surroundings-daylight.jpg",
+      "estate_title": "Luxurious Apartment with City Skyline Views",
+      "segment_name": "Apartment",
+      "description": "Indulge in urban luxury in this spacious apartment boasting panoramic views of the city skyline. Perfect for professionals seeking sophistication and convenience.",
+      "price": 3000,
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "City Center, Downtown",
+      "facilities": ["Fitness Center", "Swimming Pool", "Rooftop Terrace", "Concierge Service"]
+    },
+    {
+      "id": "004",
+      "image": "https://i.ibb.co/s59LhkM/modern-luxury-domestic-room-comfortable-relaxation-generative-ai.jpg",
+      "estate_title": "Modern Student Housing near University Campus",
+      "segment_name": "Student housing",
+      "description": "Live and study in style in this modern student housing complex conveniently located near the university campus. Enjoy amenities designed for student life.",
+      "price": 1500,
+      "status": "rent",
+      "area": "600 sq ft",
+      "location": "University District, Campus View",
+      "facilities": ["Study Lounge", "Game Room", "Fitness Center", "Laundry Facilities"]
+    },
+    {
+      "id": "005",
+      "image": "https://i.ibb.co/jbg53CY/cafe-living-room-loft-style.jpg",
+      "estate_title": "Senior Living Community with Resort Amenities",
+      "segment_name": "Senior living community",
+      "description": "Experience retirement in paradise in this senior living community offering resort-style amenities and a vibrant social atmosphere. Live life to the fullest.",
+      "price": 500000,
+      "status": "sale",
+      "area": "1500 sq ft",
+      "location": "Retirement Haven, Sunshine Meadows",
+      "facilities": ["Clubhouse", "Swimming Pool", "Fitness Classes", "On-site Dining"]
+    },
+    {
+      "id": "006",
+      "image": "https://i.ibb.co/4NGdbNH/beautiful-umbrella-chair-around-swimming-pool-hotel-resort.jpg",
+      "estate_title": "Seaside Vacation Rental with Private Beach Access",
+      "segment_name": "Vacation rental",
+      "description": "Escape to paradise in this seaside vacation rental offering direct access to a private beach. Relax and rejuvenate amidst stunning ocean views.",
+      "price": 3000,
+      "status": "rent",
+      "area": "2000 sq ft",
+      "location": "Coastal Retreat, Oceanfront Escape",
+      "facilities": ["Private Beach Access", "Oceanfront Deck", "BBQ Area", "Outdoor Shower"]
+    }
+  ]
