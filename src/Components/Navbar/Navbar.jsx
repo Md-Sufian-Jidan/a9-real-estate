@@ -1,28 +1,37 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+// import Toastify from 'toastify-js';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const Navbar = () => {
-    const { user,logOut } = useContext(AuthContext);
+    // Basic usage
+    
+
+
+    const { user, logOut } = useContext(AuthContext);
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
         <li><NavLink to="/user-profile">User Profile</NavLink></li>
     </>
     //handle log out
-    const handleLogOut =() => {
+    const handleLogOut = () => {
         logOut()
-        .then((result) => {
-            console.log(result.user);
-            toast.success('User Log Out Successfully');
-        })
-        .catch((error) => {
-            console.log(error.message);
-        })
-      }
+            .then((result) => {
+                console.log(result.user);
+                // Toastify({
+                //     text: "This is a toast notification!",
+                //     duration: 3000 // Duration in milliseconds
+                // }).showToast();
+                return toast.success('User Log Out Successfully');
+            })
+            .catch((error) => {
+                console.log(error.message);
+                return toast.success('User Log Out Successfully');
+            })
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -51,12 +60,12 @@ const Navbar = () => {
                     user && <p>{user.email}</p>
                 }
                 {user ?
-                <button onClick={handleLogOut} className="btn bg-[#f71113]">Log Out</button>
-                :
-                <Link to="/login" className="btn bg-[#14f70c]">Login</Link>
-            }
+                    <button onClick={handleLogOut} className="btn bg-[#f71113]">Log Out</button>
+                    :
+                    <Link to="/login" className="btn bg-[#14f70c]">Login</Link>
+                }
             </div>
-                    <ToastContainer />
+            <ToastContainer />
         </div>
     );
 };

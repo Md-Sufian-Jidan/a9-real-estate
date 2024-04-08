@@ -1,6 +1,6 @@
 [
     {
-      "id": "001",
+      "id": "1",
       "image": "https://i.ibb.co/tQsXMWh/view-from-balcony-apartment.jpg",
       "estate_title": "Modern Single-Family Home with Mountain Views",
       "segment_name": "Single-family home",
@@ -12,7 +12,7 @@
       "facilities": ["Gourmet Kitchen", "Spa-like Bathroom", "Backyard Garden", "Garage"]
     },
     {
-      "id": "002",
+      "id": "2",
       "image": "https://i.ibb.co/T0JkV20/istockphoto-1448385933-1024x1024.jpg",
       "estate_title": "Charming Townhouse in Historic District",
       "segment_name": "Townhouse",
@@ -24,7 +24,7 @@
       "facilities": ["Brick Fireplace", "Private Patio", "Community Park Access", "Parking Space"]
     },
     {
-      "id": "003",
+      "id": "3",
       "image": "https://i.ibb.co/XWg8SsB/rural-house-surroundings-daylight.jpg",
       "estate_title": "Luxurious Apartment with City Skyline Views",
       "segment_name": "Apartment",
@@ -36,7 +36,7 @@
       "facilities": ["Fitness Center", "Swimming Pool", "Rooftop Terrace", "Concierge Service"]
     },
     {
-      "id": "004",
+      "id": "4",
       "image": "https://i.ibb.co/s59LhkM/modern-luxury-domestic-room-comfortable-relaxation-generative-ai.jpg",
       "estate_title": "Modern Student Housing near University Campus",
       "segment_name": "Student housing",
@@ -48,7 +48,7 @@
       "facilities": ["Study Lounge", "Game Room", "Fitness Center", "Laundry Facilities"]
     },
     {
-      "id": "005",
+      "id": "5",
       "image": "https://i.ibb.co/jbg53CY/cafe-living-room-loft-style.jpg",
       "estate_title": "Senior Living Community with Resort Amenities",
       "segment_name": "Senior living community",
@@ -60,7 +60,7 @@
       "facilities": ["Clubhouse", "Swimming Pool", "Fitness Classes", "On-site Dining"]
     },
     {
-      "id": "006",
+      "id": "6",
       "image": "https://i.ibb.co/4NGdbNH/beautiful-umbrella-chair-around-swimming-pool-hotel-resort.jpg",
       "estate_title": "Seaside Vacation Rental with Private Beach Access",
       "segment_name": "Vacation rental",

@@ -42,7 +42,8 @@ const AuthProvider = ({ children }) => {
         fetch("data.json")
             .then(res => res.json())
             .then(fake => setFakeData(fake));
-    }, [])
+    }, []);
+    
     // observe the user
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth,currentUser => {
