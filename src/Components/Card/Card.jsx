@@ -5,8 +5,8 @@ const Card = ({ data }) => {
     // console.log(data);
     return (
         <div>
-            <div className="card card-compact w-96 h-[400px] bg-base-100 shadow-xl">
-                <figure><img src={image} alt="Shoes" /></figure>
+            <div className="card card-compact h-[700px] w-96 bg-base-100 shadow-xl">
+                <figure><img className="h-[50vh]" src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{estate_title}</h2>
                     <p className="font-bold text-lg">{location}</p>
@@ -18,8 +18,8 @@ const Card = ({ data }) => {
                         <li>{facilities[2]}</li>
                         <li>{facilities[3]}</li>
                     </ul>
-                    <div className="card-actions justify-end">
-                        <Link to={`/card/${id}`} className="btn bg-[#a12fd6]">Buy Now</Link>
+                    <div className="card-actions justify-center my-3">
+                        <Link to={`/card/${id}`} className="btn bg-[#3195e7]">Buy Now</Link>
                     </div>
                 </div>
             </div>

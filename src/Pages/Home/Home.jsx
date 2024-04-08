@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Card from "../../Components/Card/Card";
+import Banner from "../../Components/Banner/Banner";
 
 const Home = () => {
     const {fakeData} = useContext(AuthContext);
-    console.log(fakeData);
+    // console.log(fakeData);
     return (
         <div>
-            <h2 className="text-2xl">i am from home</h2>
+            <Banner />
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto md:w-full w-1/2 gap-5 my-5">
             {
                 fakeData?.map(data => <Card data={data} key={data.id}></Card>)

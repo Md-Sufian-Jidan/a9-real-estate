@@ -4,31 +4,33 @@ import { useParams } from "react-router-dom";
 
 const CardDetails = () => {
     const { fakeData } = useContext(AuthContext);
-    console.log(fakeData);
     const { id } = useParams();
-    const idInt = parseInt(id);
-    const data = fakeData?.find((b) => b.id === idInt);
-    console.log(data);
+    const data = fakeData?.find((b) => b.id === id);
+    // console.log(data);
 
-
-
-    // const { image, estate_title, location, segment_name, facilities, description, price, status, area } = data;
+    const { image, estate_title, location, segment_name, facilities, description, price, status, area } = data;
     return (
-        <div className="flex ">
-            {/* <div>
-                <img src={image} alt="" />
+        <div className="mx-10 my-5">
+             <div>
+                <img className="rounded-2xl" src={image} alt="" />
             </div>
-            <div>
-                <p>{estate_title}</p>
+            <div className="space-y-1">
+                <p >{estate_title}</p>
                 <p>{description}</p>
-                <p>{location}</p>
-                <p>{location}</p>
-                <p>{segment_name}</p>
-                <p>{price}</p>
-                <p>{status}</p>
-                <p>{area}</p>
-            </div> */}
-            <h2>hello</h2>
+                <p>Location : <span className="font-bold">{location}</span></p>
+                <p>Segment Name : <span className="font-bold">{segment_name}</span></p>
+                <p>Area : <span className="font-bold">{area}</span></p>
+                <ul>
+                    <li>{facilities[0]}</li>
+                    <li>{facilities[1]}</li>
+                    <li>{facilities[2]}</li>
+                    <li>{facilities[3]}</li>
+                </ul>
+                <div className="flex justify-between">
+                <p>Price : $ <span className="font-bold">{price}</span></p>
+                <p>Status : <span className="font-bold">{status}</span></p>
+                </div>
+            </div> 
         </div>
     );
 };

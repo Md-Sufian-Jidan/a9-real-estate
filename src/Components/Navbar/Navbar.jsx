@@ -51,14 +51,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {
+                    user && <p className="mr-1">{user.email}</p>
+                }
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
                         <img alt="Profile" src={user?.image} />
                     </div>
                 </div>
-                {
-                    user && <p>{user.email}</p>
-                }
                 {user ?
                     <button onClick={handleLogOut} className="btn bg-[#f71113]">Log Out</button>
                     :

@@ -1,8 +1,11 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
     // show password
@@ -10,7 +13,7 @@ const Register = () => {
     // create user 
     const { createUser } = useContext(AuthContext);
     //navigate to login page 
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -19,14 +22,23 @@ const Register = () => {
     
       const onSubmit = (data) => {
         const {name , email,photo,password} = data;
+        if(password.length < 6){
+           return toast.error('your password should at least 6 character long');
+        }
+        if(!/[A-Z]/.test(password)){
+            return toast.error('Your password should contain a Capital letter')
+        }
+        if(!/[a-z]/.test(password)){
+            return toast.error('Your password should contain a lower letter')
+        }
         createUser(email, password)
         .then((result)=> {
             console.log(result.user);
-            // navigate ="/login"
-            console.log(navigate)
+           return toast.success('user created successfully')
         })
         .catch((error) => {
             console.log(error.message);
+            return toast.error('user all ready exists. please login')
         });
       }
     
@@ -85,6 +97,7 @@ const Register = () => {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

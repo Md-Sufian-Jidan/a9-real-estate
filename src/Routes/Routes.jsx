@@ -7,6 +7,9 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import CardDetails from "../Components/CardDetails/CardDetails";
+import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute";
+import UserProfile from "../Pages/UserProfile/UserProfile";
+import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 
   const router = createBrowserRouter([
     {
@@ -19,8 +22,16 @@ import CardDetails from "../Components/CardDetails/CardDetails";
             element:<Home />
         },
         {
+          path:'/user-profile',
+          element:<ProtectedRoute><UserProfile /></ProtectedRoute>
+        },
+        {
+          path:'/update-profile',
+          element:<ProtectedRoute><UpdateProfile /></ProtectedRoute>
+        },
+        {
             path: '/card/:id',
-            element:<CardDetails />
+            element:<ProtectedRoute><CardDetails /></ProtectedRoute>
         },
         {
             path: '/login',
