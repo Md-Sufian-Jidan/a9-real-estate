@@ -37,6 +37,9 @@ const CardDetails = () => {
                 <p>Status : <span>{status}</span></p>
                 </div>
             </div> 
+            <div className="navbar-center">
+                <button className="btn bg-[#7832c9]">Buy Now</button>
+            </div>
         </div>
        </div>
     );

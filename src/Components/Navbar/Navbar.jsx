@@ -13,6 +13,9 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/user-profile">user Profile</NavLink></li>
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
+        {user && 
+        <li><NavLink to="/about-us">About Us</NavLink></li>
+        }
     </>
     //handle log out
     const handleLogOut = () => {

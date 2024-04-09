@@ -10,6 +10,7 @@ import CardDetails from "../Components/CardDetails/CardDetails";
 import ProtectedRoute from "../Components/ProtectedRoute/ProtectedRoute";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
+import AboutUs from "../Components/About/AboutUs";
 
   const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
         {
           path:'/update-profile',
           element:<ProtectedRoute><UpdateProfile /></ProtectedRoute>
+        },
+        {
+          path:'/about-us',
+          element:<ProtectedRoute><AboutUs /></ProtectedRoute>
         },
         {
             path: '/card/:id',
