@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
@@ -12,6 +13,7 @@ const Register = () => {
     const [show, setShow] = useState(false);
     // create user 
     const { createUser } = useContext(AuthContext);
+    
     //navigate to login page 
     // let navigate = useNavigate()
     const {
@@ -21,7 +23,8 @@ const Register = () => {
       } = useForm()
     
       const onSubmit = (data) => {
-        const {name , email,photo,password} = data;
+        const {name , email ,photo ,password} = data;
+
         if(password.length < 6){
            return toast.error('your password should at least 6 character long');
         }
@@ -34,6 +37,15 @@ const Register = () => {
         createUser(email, password)
         .then((result)=> {
             console.log(result.user);
+
+            //update user profile name and photo url
+            updateProfile(result.user,{
+                displayName: name, photoURL:photo
+            })
+            .then(() => console.log('profile updated'))
+            .catch((error) => {
+                console.log(error);
+            })
            return toast.success('user created successfully')
         })
         .catch((error) => {
@@ -43,13 +55,13 @@ const Register = () => {
       }
     
     return (
-        <div className="hero min-h-screen bg-purple-200">
-            <div className="hero-content flex-col">
-                <div className="text-center lg:text-left">
+        <div className="hero min-h-screen bg-purple-200" data-aos="zoom-in" data-aos-duration="1000">
+            <div className="hero-content flex-col" data-aos="zoom-out" data-aos-delay="1500">
+                <div className="text-center lg:text-left" data-aos="fade-right" data-aos-delay="2000">
                     <h1 className="text-5xl font-bold">Register now!</h1>
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-yellow-100">
-                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body" data-aos="fade-down" data-aos-delay="2500">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>

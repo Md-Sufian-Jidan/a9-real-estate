@@ -1,12 +1,16 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link ,useLocation, useNavigate} from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    // auto redirect
+    const location = useLocation();
+    const navigate = useNavigate();
+    // console.log('location in the login page',location);
     // show password
     const [show, setShow] = useState(false);
     // use context
@@ -20,6 +24,7 @@ const Login = () => {
         signInUser(email, password)
             .then((result) => {
                 console.log(result.user);
+                navigate(location?.state ? location.state: '/');
                 return toast.success('User Login Successful');
             })
             .catch((error) => {
@@ -32,6 +37,7 @@ const Login = () => {
         googleLogin()
             .then((result) => {
                 console.log(result.user);
+                navigate(location?.state ? location.state: '/');
                 return toast.success('User Login Successful');
             })
             .catch((error) => {
@@ -45,6 +51,7 @@ const Login = () => {
         githubLogin()
             .then((result) => {
                 console.log(result.user);
+                navigate(location?.state ? location.state: '/');
                 return toast.success('User All Ready Exists');
             })
             .catch((error) => {
@@ -54,9 +61,9 @@ const Login = () => {
     };
 
     return (
-        <div className="w-1/2 mx-auto my-3">
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-slate-200 p-10  rounded-2xl">
-                <div className="form-control">
+        <div className="w-1/2 mx-auto my-3" >
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-slate-200 p-10  rounded-2xl" data-aos="zoom-in" data-aos-duration="1000">
+                <div className="form-control" data-aos="fade-right" data-aos-duration="2000">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
@@ -64,7 +71,7 @@ const Login = () => {
                     {errors.email && <span className="text-red-500">This field is required</span>}
 
                 </div>
-                <div className="form-control relative">
+                <div className="form-control relative" data-aos="fade-left" data-aos-duration="2000">
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
@@ -80,7 +87,7 @@ const Login = () => {
                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                     </label>
                 </div>
-                <div className="form-control my-3">
+                <div className="form-control my-3" data-aos="fade-right" data-aos-duration="2000">
                     <button className="btn bg-[#adf010]">Login</button>
                 </div>
                 <p>Do not Have An Account? <Link className="underline" to="/register">Register One</Link></p>

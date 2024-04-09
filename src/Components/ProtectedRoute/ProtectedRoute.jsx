@@ -5,13 +5,13 @@ import { Navigate ,useLocation } from 'react-router-dom'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const PrivateRoute = ({children}) => {
-    const {user , loading} = useContext(AuthContext);
+    const {user , load} = useContext(AuthContext);
     let location = useLocation();
     console.log(location);
 
-    // if(loading){
-    //     return <span className="loading loading-bars loading-lg"></span>;
-    // }
+    if(load){
+        return <span className="loading loading-bars loading-2xl flex justify-center items-center"></span>;
+    }
     if(user){
         return children;
     }

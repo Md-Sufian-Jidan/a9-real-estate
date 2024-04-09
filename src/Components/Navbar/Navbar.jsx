@@ -1,35 +1,29 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-// import Toastify from 'toastify-js';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Tooltip as ReactTooltip } from 'react-tooltip'
+
 
 const Navbar = () => {
     // Basic usage
-    
-
-
     const { user, logOut } = useContext(AuthContext);
+
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/user-profile">user Profile</NavLink></li>
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
-        <li><NavLink to="/user-profile">User Profile</NavLink></li>
     </>
     //handle log out
     const handleLogOut = () => {
         logOut()
             .then((result) => {
                 console.log(result.user);
-                // Toastify({
-                //     text: "This is a toast notification!",
-                //     duration: 3000 // Duration in milliseconds
-                // }).showToast();
                 return toast.success('User Log Out Successfully');
             })
             .catch((error) => {
                 console.log(error.message);
-                return toast.success('User Log Out Successfully');
+                return toast.success('oops! Something wrong. please reload the page');
             })
     }
     return (
@@ -51,13 +45,16 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {
-                    user && <p className="mr-1">{user.email}</p>
-                }
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img alt="Profile" src={user?.image} />
+                        <div className="cursor-pointer">
+
+                            <img data-tooltip-id="my-tooltip" data-tooltip-content={user?.email} alt="photo url is not right" src={user ? user?.photoURL
+                                : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                                <ReactTooltip id="my-tooltip"/>
+                        </div>
                     </div>
+
                 </div>
                 {user ?
                     <button onClick={handleLogOut} className="btn bg-[#f71113]">Log Out</button>
