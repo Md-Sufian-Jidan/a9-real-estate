@@ -16,9 +16,9 @@ housing, senior living communities, vacation rentals etc.<br />
 
 6) if some one is new in the website for browsing the website first he or she will make a account in the website or if he or she's account all ready exists in the website he or she can login in the website.
 
-7) Then he or she can browse the website easily And they can buy any properties of the Website contains.
+7) Then he or she can browse the website easily And they can buy any properties or you can rent a properties of the Website contains.
 
-At End Stay with Us For More New Updates and Enjoy Your Reading
+At End Stay with Us For More New Updates and Enjoy Your Buying
 
 Top 5 npm package that use in the website <br />
 1) swipe slider
