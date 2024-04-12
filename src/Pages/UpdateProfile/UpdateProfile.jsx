@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
@@ -65,7 +65,6 @@ const UpdateProfile = () => {
                     <button className="btn my-5 bg-[#26b3a0]">Update Profile</button>
                 </div>
             </form>
-            <ToastContainer />
         </div>
     );
 };
