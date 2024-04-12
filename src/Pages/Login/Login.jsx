@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
-import { Link ,useLocation, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -23,27 +23,26 @@ const Login = () => {
         console.log(email, password);
         signInUser(email, password)
             .then((result) => {
+                toast.success('User Login Successful');
                 console.log(result.user);
-                navigate(location?.state ? location.state: '/');
-                return toast.success('User Login Successful');
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
+                toast.error('check your email and password and try again');
                 console.log(error.message);
-                return toast.error('User All Ready Exists');
             })
     };
     //google login
     const handleGoogle = () => {
         googleLogin()
             .then((result) => {
+                toast.success('User Login Successful');
                 console.log(result.user);
-                navigate(location?.state ? location.state: '/');
-                return toast.success('User Login Successful');
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
+                toast.error('Something wrong please reload the page and try again');
                 console.log(error.message);
-                return toast.error('User All Ready Exists');
-
             })
     };
     //github login
@@ -51,12 +50,12 @@ const Login = () => {
         githubLogin()
             .then((result) => {
                 console.log(result.user);
-                navigate(location?.state ? location.state: '/');
-                return toast.success('User All Ready Exists');
+                toast.success('User Login Successfully');
+                navigate(location?.state ? location.state : '/');
             })
             .catch((error) => {
                 console.log(error.message);
-                return toast.error('User All Ready Exists');
+                toast.error('Something wrong please reload the page and try again');
             })
     };
 

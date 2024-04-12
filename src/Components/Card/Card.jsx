@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import PropTypes from 'prop-types';
+
 
 const Card = ({ data }) => {
     const {load} = useContext(AuthContext);
@@ -32,4 +34,7 @@ const Card = ({ data }) => {
     );
 };
 
+Card.propTypes = {
+    data: PropTypes.object.isRequired
+}
 export default Card;

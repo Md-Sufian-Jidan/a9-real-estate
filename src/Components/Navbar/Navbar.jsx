@@ -13,20 +13,20 @@ const Navbar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/user-profile">user Profile</NavLink></li>
         <li><NavLink to="/update-profile">Update Profile</NavLink></li>
-        {user && 
-        <li><NavLink to="/about-us">About Us</NavLink></li>
+        {user &&
+            <li><NavLink to="/about-us">About Us</NavLink></li>
         }
     </>
     //handle log out
     const handleLogOut = () => {
         logOut()
-            .then((result) => {
-                console.log(result.user);
-                return toast.success('User Log Out Successfully');
+            .then(() => {
+                toast.success('User Log Out Successfully');
+                // console.log(result.user);
             })
-            .catch((error) => {
-                console.log(error.message);
-                return toast.success('oops! Something wrong. please reload the page');
+            .catch(() => {
+                toast.error('oops! Something wrong. please reload the page');
+                // console.log(error.message);
             })
     }
     return (
@@ -51,10 +51,9 @@ const Navbar = () => {
                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
                         <div className="cursor-pointer">
-
                             <img data-tooltip-id="my-tooltip" data-tooltip-content={user?.email} alt="photo url is not right" src={user ? user?.photoURL
                                 : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
-                                <ReactTooltip id="my-tooltip"/>
+                            <ReactTooltip id="my-tooltip" />
                         </div>
                     </div>
 

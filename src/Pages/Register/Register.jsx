@@ -37,7 +37,6 @@ const Register = () => {
         createUser(email, password)
         .then((result)=> {
             console.log(result.user);
-
             //update user profile name and photo url
             updateProfile(result.user,{
                 displayName: name, photoURL:photo
@@ -46,7 +45,8 @@ const Register = () => {
             .catch((error) => {
                 console.log(error);
             })
-           return toast.success('user created successfully')
+            toast.success('User Created Successfully')
+        //    return toast.success('user created successfully')
         })
         .catch((error) => {
             console.log(error.message);

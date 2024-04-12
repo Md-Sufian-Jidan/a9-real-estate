@@ -40,7 +40,6 @@ const AuthProvider = ({ children }) => {
         setLoad(true);
         return signOut(auth)
     }
-
     // data.json
     useEffect(() => {
         fetch("/data.json")
@@ -63,7 +62,6 @@ const AuthProvider = ({ children }) => {
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
-
         </AuthContext.Provider>
     );
 };

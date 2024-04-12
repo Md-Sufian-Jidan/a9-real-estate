@@ -1,18 +1,19 @@
 import { useContext } from "react";
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
     const location = useLocation();
+    console.log(location);
     const navigate = useNavigate();
-    
+
     const { user, load } = useContext(AuthContext);
     // console.log(user);
-    if(load){
+    if (load) {
         return <span className="loading loading-bars loading-lg"></span>;
     }
 
@@ -22,17 +23,17 @@ const UpdateProfile = () => {
         // console.log(name, photo);
 
         updateProfile(user, {
-            displayName: name, photoURL : photo
+            displayName: name, photoURL: photo
         })
-        .then((result) => {
-            console.log(result.user);
-            navigate(location?.state ? location.state: 'user-profile');
-            toast.success('user Update Successfully');
-        })
-        .catch((error) => {
-            console.log(error.message);
-            toast.error('user Not Updated. Please Reload the Page and Try again');
-        })
+            .then(() => {
+                // console.log(result.user);
+                toast.success('user Update Successfully');
+                navigate(location?.state ? location.state : '/user-profile');
+            })
+            .catch(() => {
+                toast.error('user Not Updated. Please Reload the Page and Try again');
+                // console.log(error.message);
+            })
     }
     return (
         <div>
@@ -58,7 +59,7 @@ const UpdateProfile = () => {
                     <label className="label">
                         <span className="label-text">User Email</span>
                     </label>
-                    <input type="email" value={user.email} className="input input-bordered" required />
+                    <input type="email" defaultValue={user.email} className="input input-bordered" />
                 </div>
                 <div className="text-center">
                     <button className="btn my-5 bg-[#26b3a0]">Update Profile</button>
